@@ -1,0 +1,19 @@
+<div class="signinpage">
+  <div class="auth-container">
+    <h2>Welcome Back</h2>
+  
+    <form (ngSubmit)="login()">
+            <input type="text" placeholder="Username" [(ngModel)]="username" name="username" required>
+  <input type="password" placeholder="Password"  [(ngModel)]="password" name="password" required>
+            
+            <span class="error" style="display:none;">Invalid email or password</span>
+
+            <button type="submit">Sign In</button>
+        </form>
+    <p>
+   New here? 
+  <a routerLink="/signup">Create an account</a>
+  </p>
+    <p *ngIf="error" class="error">{{ error }}</p>
+  </div>
+</div>

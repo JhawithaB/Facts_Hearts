@@ -1,0 +1,105 @@
+<div class="dashboard">
+
+  
+  <aside class="sidebar">
+
+    <div class="logo">
+      <img src="favicon2.png" alt="logo">
+      <span>Facts & Hearts</span>
+    </div>
+
+    <nav>
+      <a routerLink="/dashboard"
+       routerLinkActive="active">HOME</a>
+      <a routerLink="/trivia"
+       routerLinkActive="active">TRIVIA</a>
+      <a routerLink="/heartfelts"
+       routerLinkActive="active">HEARTFELTS</a>
+      <a routerLink="/about"
+       routerLinkActive="active">ABOUT US</a>
+      <a routerLink="/landing"
+       routerLinkActive="active">LOG OUT</a>
+    </nav>
+
+  </aside>
+
+  
+  
+  <main class="content">
+
+    <div class="header" >
+      <h1>Welcome {{ user?.username || 'User' }} !</h1>
+      <p>Challenge your mind. Reflect from the heart.</p>
+    </div>
+    
+    <div class="quiz-card" *ngIf="!isLoading">
+    
+
+    <div *ngIf="!quizFinished && questions.length > 0">
+      <div class="quiz-header">
+        <span class="badge">Question {{current + 1}}/{{questions.length}}</span>
+        <span class="score-badge">Score: {{score}}</span>
+      </div>
+
+
+      <h2 class="question-text" *ngIf="questions[current]" 
+          [innerHTML]="decode(questions[current].question.text)"></h2>
+
+
+      <div class="choices-grid">
+        <button 
+          *ngFor="let answer of shuffledAnswers"
+          (click)="checkAnswer(answer)"
+          [disabled]="answered"
+          class="choice-btn"
+          [class.correct]="answered && answer === questions[current].correctAnswer"
+          [class.wrong]="answered && answer === selectedAnswer && answer !== questions[current].correctAnswer"
+          [innerHTML]="decode(answer)">
+        </button>
+      </div>
+
+ 
+      <div class="feedback-container" *ngIf="answered">
+        <p [ngClass]="selectedAnswer === questions[current].correctAnswer ? 'correct-msg' : 'wrong-msg'">
+          {{ selectedAnswer === questions[current].correctAnswer ? '✅ Correct! Moving to next...' : '❌ Incorrect! Watch the correct answer.' }}
+        </p>
+        <div class="timer-bar"></div>
+      </div>
+    </div>
+
+  
+    <div *ngIf="quizFinished" class="results-box">
+      <div class="trophy">🏆</div>
+      <h2>Quiz Complete!</h2>
+      <p class="final-score">Final Score: <span>{{score}}</span> / {{questions.length}}</p>
+      <div class="result-buttons">
+        <button class="btn-primary" (click)="restart()">Play Again</button>
+        <button class="btn-secondary" routerLink="/trivia">Other Categories</button>
+          <button class="btn-secondary" routerLink="/dashboard">Back to home</button>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div *ngIf="isLoading" class="status-box">
+    <div class="spinner"></div>
+    <p>Loading Questions...</p>
+  </div>
+   
+      
+
+   
+    <footer class="footer">
+      <div class="footer-content">
+      <img class="footlogo" src="favicon2.png" alt="logo">
+      <span>Facts & Hearts</span> <br><br>
+      <p>&copy; 2026 Project You. All rights reserved.</p>
+     </div>
+    </footer>
+
+  </main>
+
+</div>
+
+

@@ -1,0 +1,92 @@
+<div class="dashboard">
+
+  
+  <aside class="sidebar">
+
+    <div class="logo">
+      <img src="favicon2.png" alt="logo">
+      <span>Facts & Hearts</span>
+    </div>
+
+    <nav>
+      <a routerLink="/dashboard"
+       routerLinkActive="active">HOME</a>
+      <a routerLink="/trivia"
+       routerLinkActive="active">TRIVIA</a>
+      <a routerLink="/heartfelts"
+       routerLinkActive="active">HEARTFELTS</a>
+      <a routerLink="/about"
+       routerLinkActive="active">ABOUT US</a>
+      <a routerLink="/landing"
+       routerLinkActive="active">LOG OUT</a>
+    </nav>
+
+  </aside>
+
+  
+  
+  <main class="content">
+
+    <div class="header" >
+      <h1 >Welcome {{ user?.username || 'User' }} !</h1>
+      <p>Challenge your mind. Reflect from the heart.</p>
+    </div>
+    
+      <div *ngIf="showWelcome" class="screen-container welcome-screen">
+    <div class="welcome-box">
+      <span class="big-heart">❤️</span>
+      <h1>Welcome to your Heartfelt Questions</h1>
+      <p>Take a deep breath and let's explore these meaningful questions together.</p>
+      
+      <button class="main-btn" (click)="startExploring()" [disabled]="isLoading">
+        {{ isLoading ? 'Preparing Questions...' : 'Start Now' }}
+      </button>
+      
+      <button class="back-link" routerLink="/dashboard">Maybe later</button>
+    </div>
+  </div>
+
+  
+  <div *ngIf="!showWelcome && !quizFinished && questions.length > 0" class="screen-container">
+    <div class="question-container">
+      <div class="header">
+        <span class="count">Question {{ current + 1 }} of {{ questions.length }}</span>
+      </div>
+
+      <div class="question-box">
+       
+        <h2>"{{ questions[current]?.question }}"</h2>
+      </div>
+
+      
+      <button class="next-btn" (click)="nextQuestion()">
+        {{ current + 1 === questions.length ? 'Finish' : 'Next Question →' }}
+      </button>
+       <button class="quit" (click)="quitQuestions()">Quit</button>
+       
+    </div>
+  </div>
+
+ 
+  <div *ngIf="quizFinished" class="screen-container">
+    <div class="welcome-box">
+      <h2>You're all done!</h2>
+      <p>I hope these questions helped you reflect today.</p>
+      <button class="main-btn" routerLink="/dashboard">Back to Home</button>
+    </div>
+  </div>
+      
+
+   
+    <footer class="footer">
+      <div class="footer-content">
+      <img class="footlogo" src="favicon2.png" alt="logo">
+      <span>Facts & Hearts</span> <br><br>
+      <p>&copy; 2026 Project You. All rights reserved.</p>
+     </div>
+    </footer>
+
+  </main>
+
+</div>
+

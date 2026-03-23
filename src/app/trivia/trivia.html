@@ -1,0 +1,79 @@
+<div class="dashboard">
+
+  
+  <aside class="sidebar">
+
+    <div class="logo">
+      <img src="favicon2.png" alt="logo">
+      <span>Facts & Hearts</span>
+    </div>
+
+    <nav>
+      <a routerLink="/dashboard"
+       routerLinkActive="active">HOME</a>
+      <a routerLink="/trivia"
+       routerLinkActive="active">TRIVIA</a>
+      <a routerLink="/heartfelts"
+       routerLinkActive="active">HEARTFELTS</a>
+      <a routerLink="/about"
+       routerLinkActive="active">ABOUT US</a>
+      <a routerLink="/landing"
+       routerLinkActive="active">LOG OUT</a>
+    </nav>
+
+  </aside>
+
+  
+  
+  <main class="content">
+
+    <div class="header" >
+      <h1>Welcome {{ user?.username || 'User' }} !</h1>
+      <p>Challenge your mind. Reflect from the heart.</p>
+    </div>
+    
+     <div class="category-list">
+  
+    <div class="category-card" routerLink="/trivia-science">
+      <div class="card-left">
+        <span class="icon">🔬</span>
+        <span class="category-name">Science</span>
+      </div>
+      <span class="arrow">→</span>
+    </div>
+
+   
+    <div class="category-card" routerLink="/trivia-history">
+      <div class="card-left">
+        <span class="icon">📜</span>
+        <span class="category-name" >History</span>
+      </div>
+      <span class="arrow">→</span>
+    </div>
+
+    
+    <div class="category-card" routerLink="/trivia-generalknowledge">
+      <div class="card-left">
+        <span class="icon">📚</span>
+        <span class="category-name">General Knowledge</span>
+      </div>
+      <span class="arrow">→</span>
+    </div>
+    
+  </div>
+
+   
+      
+
+   
+    <footer class="footer">
+      <div class="footer-content">
+      <img class="footlogo" src="favicon2.png" alt="logo">
+      <span>Facts & Hearts</span> <br><br>
+      <p>&copy; 2026 Project You. All rights reserved.</p>
+     </div>
+    </footer>
+
+  </main>
+
+</div>
