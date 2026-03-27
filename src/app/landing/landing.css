@@ -119,4 +119,126 @@
   transition: all 0.3s ease;
   margin: 10px;
 }
+html {
+  scroll-behavior: smooth;
+}
 
+/* ABOUT SECTION */
+.about-section {
+  padding: 100px 40px;
+  text-align: center;
+  background: #f5f0fa;
+  color: #333;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+/* FOOTER */
+.landing-footer{
+  background:#7f6888;
+  color:white;
+  padding:60px 10%;
+  margin-top:auto;
+}
+
+.footer-top{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:40px;
+}
+
+.footer-brand h2{
+  margin-bottom:10px;
+}
+
+.footer-brand p{
+  color:#aaa;
+  font-size:14px;
+}
+
+.footer-links{
+  display:flex;
+  gap:60px;
+}
+
+.footer-links h4{
+  margin-bottom:15px;
+  font-size:14px;
+  letter-spacing:1px;
+}
+
+.footer-links a{
+  display:block;
+  text-decoration:none;
+  color:#ccc;
+  font-size:14px;
+  margin-bottom:8px;
+  transition:0.3s;
+}
+
+/* 🔥 HOVER GLOW */
+.footer-links a:hover{
+  color:#9c7af1;
+  text-shadow:0 0 8px #9c7af1;
+}
+
+/* LINE */
+footer hr{
+  margin:40px 0;
+  border:0.5px solid #333;
+}
+
+/* BOTTOM */
+.footer-bottom{
+  text-align:center;
+}
+
+/* SOCIAL ICONS */
+.social-icons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin-bottom:15px;
+}
+
+.social-icons i{
+  width:40px;
+  height:40px;
+  border:1px solid #555;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+/* 🔥 ICON HOVER GLOW */
+.social-icons i:hover{
+  color:#fff;
+  border-color:#9c7af1;
+  box-shadow:0 0 10px #9c7af1;
+  transform:scale(1.1);
+}
+
+.footer-bottom p{
+  color:#aaa;
+  font-size:13px;
+}
+@media (max-width: 900px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}

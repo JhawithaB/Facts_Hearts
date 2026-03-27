@@ -21,8 +21,90 @@
   
       <div class="btngroup">
       <button class="play" routerLink="/signup">Let's Play</button>
-      <button class="learn" routerLink="/">Learn More</button>
+       <button class="learn" (click)="scrollTo('about')">Learn More</button>
         </div>
       </div>
     
 </div>
+<!-- 🔥 ABOUT SECTION -->
+<section id="about" class="about-section">
+  <h2>About Facts & Hearts</h2>
+  <p>
+    Facts & Hearts combines fun trivia challenges with meaningful
+    heartfelt questions. It’s designed to stimulate your mind
+    and deepen your connections all in one place.
+  </p><br>
+  <p>
+    The purpose of this website is to provide a simple and engaging space where users can both learn new information and think 
+    deeply about meaningful topics. It is designed to be user-friendly and easy to navigate, making it accessible for different 
+    types of users. The system was developed using HTML, CSS, and Angular, and it integrates the Open Trivia Database API and Heartfelts Questions API to 
+    provide dynamic trivia questions.
+  </p>
+  <br>
+
+  <p>
+    This project was created as part of a web development requirement, aiming to demonstrate skills in building a responsive and 
+    interactive website. Overall, Facts & Hearts aims to offer a balanced experience that supports both knowledge improvement 
+    and personal reflection in a simple and enjoyable way.
+  </p>
+</section>
+
+<footer class="landing-footer">
+
+  <div class="footer-top">
+    
+    <div class="footer-brand">
+      <h2>Facts & Hearts</h2>
+      <p>Challenge your mind. Reflect from the heart.</p>
+    </div>
+
+    <div class="footer-links">
+      <div>
+        <h4>Explore</h4>
+        <a (click)="scrollTo('about')">About Us</a>
+        <a routerLink="/trivia">Trivia</a>
+        <a routerLink="/heartfelts">Heartfelts</a>
+      </div>
+
+      <div>
+        <h4>Support</h4>
+        <a routerLink="/about">Contact Us</a>
+        <a routerLink="/about">Help</a>
+      </div>
+
+      <div>
+        <h4>Account</h4>
+        <a routerLink="/signin">Sign In</a>
+        <a routerLink="/signup">Sign Up</a>
+      </div>
+    </div>
+
+  </div>
+
+  <hr>
+
+  <div class="footer-bottom">
+    
+    <div class="social-icons">
+      <a href="https://www.facebook.com/login" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+
+  <a href="https://twitter.com/login" target="_blank">
+    <i class="fab fa-twitter"></i>
+  </a>
+
+  <a href="https://www.instagram.com/accounts/login/" target="_blank">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <a href="https://github.com/login" target="_blank">
+    <i class="fab fa-github"></i>
+  </a>
+    </div>
+
+    <p>© 2026 Facts & Hearts. All rights reserved.</p>
+
+  </div>
+
+</footer>

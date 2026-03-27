@@ -9,4 +9,12 @@ import { NgIf } from '@angular/common';
   templateUrl: './landing.html',
   styleUrls: ['./landing.css']
 })
-export class Landing {}
+export class Landing {
+  scrollTo(section: string) {
+  const el = document.getElementById(section);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+}

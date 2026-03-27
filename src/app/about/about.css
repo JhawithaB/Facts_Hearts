@@ -1,0 +1,262 @@
+
+.dashboard{
+  display:flex;
+  min-height:100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.sidebar{
+  width:220px;
+  background:linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
+  url(https://images.squarespace-cdn.com/content/v1/6740fa5cf32dde6b03917416/3c03a962-2c40-4e78-8c93-98af7414b96e/trivia+quiz+bg.jpeg);
+  background-size:cover;
+  background-position:center;
+  color:white;
+  padding:25px 20px;
+  display:flex;
+  flex-direction:column;
+}
+
+
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:bold;
+  font-size:16px;
+  margin-bottom:40px;
+}
+
+.logo img{
+  width:28px;
+}
+.footlogo{
+  width:20px;
+}
+
+
+
+
+.sidebar nav{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.sidebar a{
+  color:white;
+  text-decoration:none;
+  padding:10px 15px;
+  border-radius:20px;
+  font-size:14px;
+  transition:0.2s;
+}
+
+
+
+
+.sidebar a:hover{
+  background:#c9a6d6;
+}
+
+
+
+
+.sidebar a.active{
+  background:#c9a6d6;
+  font-weight:bold;
+}
+
+
+.content {
+  flex: 1;
+  background: #7f6888;
+  padding: 40px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.header h1 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.header p {
+  margin-top: 6px;
+  color: #e5d7ea;
+}
+
+/* ===== ABOUT SECTION ===== */
+.about-wrapper {
+  padding: 20px;
+}
+
+/* Header */
+.about-header {
+  text-align: center;
+  
+}
+
+.about-header h1 {
+  font-size: 2.2rem;
+  color: white;
+}
+
+.about-header p {
+  color: #e5d7ea;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2x2 layout */
+  gap: 25px; /* space between cards */
+  margin-top: 20px;
+  color: black;
+
+}
+
+
+.about-card {
+  width: 80%;
+  height: 220px; 
+  perspective: 1000px;
+  display: flex;
+  justify-content: center; 
+  padding: 30px;
+  gap: 20px;
+}
+
+/* INNER */
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+/* FLIP */
+.about-card:hover .card-inner {
+  transform: rotateY(180deg);
+  align-items: center;
+}
+
+/* FRONT & BACK */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  backface-visibility: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+
+.card-front {
+  background: linear-gradient(135deg, #5c7cfa 0%, #9c7af1 100%); 
+  gap: 30px;
+}
+
+
+.card-back {
+  background: #ffffff;
+  transform: rotateY(180deg);
+}
+
+
+.icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* Text */
+.card-front h2 {
+  font-size: 1.3rem;
+  color:#ffffff;
+}
+
+.card-back p,
+.card-back ul {
+  font-size: 0.9rem;
+}
+
+.card-back ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Hover polish */
+.about-card:hover {
+  transform: scale(1.03);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+  color: #eee;
+  font-size: 14px;
+}
+
+.footer-content {
+  text-align: right;
+}
+
+.footer-content span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+
+@media (max-width: 900px) {
+
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width:100%;
+    height:auto;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .content {
+    padding: 25px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    justify-content: center;
+    margin-top: 40px;
+  }
+}
