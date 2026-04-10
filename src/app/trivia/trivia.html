@@ -29,8 +29,8 @@
   <main class="content">
 
     <div class="header" >
-      <h1>Welcome {{ user?.username || 'User' }} !</h1>
-      <p>Challenge your mind. Reflect from the heart.</p>
+      <h1>{{ user?.username || 'User' }} !</h1>
+      <p>Challenge your mind...</p>
     </div>
     
      <div class="category-list">
@@ -68,11 +68,34 @@
 
    
     <footer class="footer">
-      <div class="footer-content">
-      <img class="footlogo" src="favicon2.png" alt="logo">
-      <span>Facts & Hearts</span> <br><br>
-      <p>&copy; 2026 Project You. All rights reserved.</p>
-     </div>
+       <div class="footer-brand">
+      <h2>Facts & Hearts</h2>
+      <p>Challenge your mind. Reflect from the heart.</p>
+      <p class="footer-copy">© 2026 Facts & Hearts. All rights reserved.</p>
+    </div>
+    <div class="footer-bottom">
+        <h3 class="connect-text">Connect with us</h3>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/login" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+
+  <a href="https://twitter.com/login" target="_blank">
+    <i class="fab fa-twitter"></i>
+  </a>
+
+  <a href="https://www.instagram.com/accounts/login/" target="_blank">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <a href="https://github.com/login" target="_blank">
+    <i class="fab fa-github"></i>
+  </a>
+    </div>
+
+  
+
+  </div>
     </footer>
 
   </main>

@@ -209,6 +209,7 @@ footer hr{
   justify-content:center;
   gap:15px;
   margin-bottom:15px;
+  text-align: right;
 }
 
 .social-icons i{
@@ -223,7 +224,7 @@ footer hr{
   transition:0.3s;
 }
 
-/* 🔥 ICON HOVER GLOW */
+
 .social-icons i:hover{
   color:#fff;
   border-color:#9c7af1;
@@ -234,6 +235,7 @@ footer hr{
 .footer-bottom p{
   color:#aaa;
   font-size:13px;
+  
 }
 @media (max-width: 900px) {
   .footer-top {

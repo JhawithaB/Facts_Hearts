@@ -98,6 +98,7 @@ body, html {
   flex-direction: column;
   min-width: 0;
   width: 100%;
+  justify-content: center;
 
 
 }
@@ -106,6 +107,7 @@ body, html {
 .header h1 {
   margin: 0;
   font-size: 26px;
+  font-family: "Lucida Handwriting", cursive ;
 }
 
 .header p {
@@ -113,20 +115,22 @@ body, html {
   color: #e5d7ea;
 }
 
-/* ===== ABOUT SECTION ===== */
+
 .about-wrapper {
   padding: 20px;
 }
 
-/* Header */
+
 .about-header {
   text-align: center;
+  
   
 }
 
 .about-header h1 {
   font-size: 2.2rem;
   color: white;
+ font-family:  "Lucida Handwriting", cursive ;
 }
 
 .about-header p {
@@ -135,17 +139,22 @@ body, html {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2x2 layout */
-  gap: 25px; /* space between cards */
-  margin-top: 20px;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 25px; 
+  margin-top: 50px;
   color: black;
+  justify-content: center;
+  margin-left: 100px;
+  overflow:hidden;        
 
 }
 
 
 .about-card {
   width: 80%;
-  height: 220px; 
+  
+   
+  min-height: 300px;  
   perspective: 1000px;
   display: flex;
   justify-content: center; 
@@ -190,12 +199,23 @@ body, html {
 .card-front {
   background: linear-gradient(135deg, #5c7cfa 0%, #9c7af1 100%); 
   gap: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 
 .card-back {
   background: #ffffff;
   transform: rotateY(180deg);
+   overflow-y: auto;
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 
@@ -208,11 +228,18 @@ body, html {
 .card-front h2 {
   font-size: 1.3rem;
   color:#ffffff;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
 }
 
 .card-back p,
 .card-back ul {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
 }
 
 .card-back ul {
