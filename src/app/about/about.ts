@@ -12,11 +12,14 @@ import { NgIf } from '@angular/common';
 })
 export class About {
   user: any;
+  isMenuOpen=false;
     
       constructor(private auth: Auth) {
         this.user = this.auth.getUser();
       }
-    
+    toggleMenu(){
+      this.isMenuOpen = !this,this.isMenuOpen;
+    }
       logout() {
         this.auth.logout();
       }

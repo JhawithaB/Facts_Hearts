@@ -1,5 +1,21 @@
 <div class="dashboard">
+  <header class="mobile-header">
+    <div class="logo">
+      <img src="favicon2.png" alt="logo">
+      <span>Facts & Hearts</span>
+    </div>
+    <div class="burger-icon" (click)="toggleMenu()" [class.open]="isMenuOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
 
+  <div class="mobile-dropdown" [class.show]="isMenuOpen">
+    <a routerLink="/about" (click)="toggleMenu()">ABOUT US</a>
+    <a routerLink="/contact" (click)="toggleMenu()">CONTACT US</a>
+    <a (click)="logout(); toggleMenu()" class="logout-mobile">LOG OUT</a>
+  </div>
   
   <aside class="sidebar">
 
@@ -114,18 +130,16 @@
   </main>
 
 </div>
-      <nav class="mobile-nav">
+     <nav class="mobile-nav">
+ 
   <a routerLink="/dashboard">
-    <span>🏠</span>
+    <img src="home.png" alt="Home" class="nav-icon">
   </a>
   <a routerLink="/trivia">
-    <span>🧠</span>
+    <img src="brain.png" alt="Trivia" class="nav-icon">
   </a>
   <a routerLink="/heartfelts">
-    <span>❤️</span>
+    <img src="heart.png" alt="Heartfelts" class="nav-icon">
   </a>
-  <a routerLink="/about">
-    <span>ℹ️</span>
-    </a>
   </nav>
 

@@ -36,46 +36,37 @@
   </aside>
 
   
-  <main class="content">
-
-    <div class="header">
-      <h1>Welcome {{ user?.username || 'User' }} !</h1>
-      <p>Challenge your mind. Reflect from the heart.</p>
-    </div>
+  <main class="contact-content">
+    <header class="contact-header">
+      <h1>Get In <span class="highlight">Touch</span></h1>
+      <p>Have questions or feedback? We would love to hear from you!</p>
+    </header>
 
     
-    <div class="cards">
+    <div class="glass-card contact-card">
+      <form (submit)="sendMessage()">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Enter your name" required>
+        </div>
+        
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="example@email.com" required>
+        </div>
 
-      <div class="card trivia" routerLink="/trivia">
-        <span class="big-brain">🧠</span>
-        <h2>Test Your Knowledge!</h2>
-        <p>
-          Challenge yourself with fun trivia questions from Science,
-          History, and General Knowledge. Answer 10 questions and see your score instantly.
-        </p>
-        <span class="card-link">Start Trivia →</span>
-      </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea rows="5" placeholder="How can we help you?" required></textarea>
+        </div>
 
-      <div class="card hearts" routerLink="/heartfelts">
-        <span class="big-heart">❤️</span>
-        <h2>Reflect & Connect</h2>
-        <p>
-          Explore meaningful questions about your thoughts, feelings,
-          and experiences. No scores , just reflection.
-        </p>
-        <span class="card-link">Reflect Now →</span>
-      </div>
-
+        <button type="submit" class="send-btn">Send Message </button>
+      </form>
     </div>
 
-   
-    <div class="daily-section">
-      <h2>Question of the Day</h2>
-      <p class="typewriter">" {{ dailyQuestion }} "</p>
-    </div>
 
-   
-    <footer class="footer">
+
+<footer class="footer">
       <div class="footer-brand">
         <h2>Facts & Hearts</h2>
         <p>Challenge your mind. Reflect from the heart.</p>

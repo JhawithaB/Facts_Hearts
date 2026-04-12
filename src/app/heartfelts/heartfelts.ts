@@ -12,15 +12,13 @@ import { Auth } from '../auth';
 })
 export class Heartfelts implements OnInit {
    user: any;
-    
    
   questions: any[] = [];
   current: number = 0;
   isLoading: boolean = true;
-  
-  
   showWelcome: boolean = true; 
   quizFinished: boolean = false;
+  isMenuOpen=false;
 
   constructor(private http: HttpClient, private cdr: ChangeDetectorRef,private auth: Auth ) {this.user = this.auth.getUser();
       }
@@ -65,5 +63,8 @@ export class Heartfelts implements OnInit {
   this.current = 0;
   this.questions = [];
   this.isLoading = false;
+  }
+  toggleMenu (){
+    this.isMenuOpen = !this.isMenuOpen;
   }
 }

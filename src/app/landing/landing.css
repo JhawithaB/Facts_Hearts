@@ -9,6 +9,10 @@
   color: rgb(154, 218, 255);
   font-family: 'Serif', 'Georgia', serif;
   justify-content: left;
+  position: relative;
+  overflow: hidden;
+  
+  
   
 }
 
@@ -17,6 +21,7 @@
   margin-bottom: auto;
   padding-left: 10%;
   max-width: 600px;
+  
 }
 
 
@@ -123,7 +128,35 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ABOUT SECTION */
+.hero-character {
+  position: absolute;
+  top: 250px;      /* Adjust this based on your button height */
+  right: 12%;      /* Positions it in the blank space on the right */
+  z-index: 5;
+}
+.hero-character img {
+  
+  width: 420px;    
+  height: auto;
+  filter: drop-shadow(0 0 20px rgba(158, 242, 255, 0.3)); 
+  
+ 
+  animation: floatBox 4s ease-in-out infinite;
+}
+
+@keyframes floatBox {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-25px); /* Moves up 25px */
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+
 .about-section {
   padding: 100px 40px;
   text-align: center;
@@ -186,24 +219,23 @@ html {
   transition:0.3s;
 }
 
-/* 🔥 HOVER GLOW */
 .footer-links a:hover{
   color:#9c7af1;
   text-shadow:0 0 8px #9c7af1;
 }
 
-/* LINE */
+
 footer hr{
   margin:40px 0;
   border:0.5px solid #333;
 }
 
-/* BOTTOM */
+
 .footer-bottom{
   text-align:center;
 }
 
-/* SOCIAL ICONS */
+
 .social-icons{
   display:flex;
   justify-content:center;
@@ -237,10 +269,13 @@ footer hr{
   font-size:13px;
   
 }
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .footer-top {
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+  .hero-character {
+    display: none; 
   }
 }
