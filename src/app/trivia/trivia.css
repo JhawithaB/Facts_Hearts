@@ -354,11 +354,16 @@ body, html {
     z-index: 3000;
     border-top: 1px solid rgba(158, 242, 255, 0.2);
   }
+.nav-icon:hover{
+    filter: drop-shadow(0 0 8px #9ef2ff);
+    transform: scale(1.1);
+  }
 
   .nav-icon {
     width: 28px;
     height: 28px;
     object-fit: contain;
+    transition: filter 0.3s ease, transform 0.3s ease;
   }
 
 

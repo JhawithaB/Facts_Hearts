@@ -12,6 +12,8 @@ import { Auth } from '../auth';
 export class Contact {
    user: any;
     isMenuOpen=false;
+rating: number = 0;
+
    constructor(private auth: Auth) {
     this.user = this.auth.getUser();
   }
@@ -23,6 +25,9 @@ export class Contact {
   sendMessage() {
     alert('Thank you! Your message has been sent successfully.');
   }
+  setRating(star: number) {
+  this.rating = star;
+}
   
 
   logout() {

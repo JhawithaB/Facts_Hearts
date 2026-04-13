@@ -15,7 +15,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class TriviaGeneralknowledge implements OnInit {
   user: any;
-    
+    isMenuOpen=false;
      
   questions: any[] = [];
   current: number = 0;
@@ -36,6 +36,10 @@ export class TriviaGeneralknowledge implements OnInit {
     
       logout() {
         this.auth.logout();}
+
+        toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 
   ngOnInit() {
     this.loadTrivia();

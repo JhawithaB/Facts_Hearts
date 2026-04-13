@@ -14,6 +14,7 @@
   <div class="mobile-dropdown" [class.show]="isMenuOpen">
     <a routerLink="/about" (click)="toggleMenu()">ABOUT US</a>
     <a routerLink="/contact" (click)="toggleMenu()">CONTACT US</a>
+    
     <a (click)="logout(); toggleMenu()" class="logout-mobile">LOG OUT</a>
   </div>
   
@@ -33,6 +34,8 @@
        routerLinkActive="active">HEARTFELTS</a>
       <a routerLink="/about"
        routerLinkActive="active">ABOUT US</a>
+       <a routerLink="/contact"
+       routerLinkActive="active">CONTACT US</a>
       <a routerLink="/landing"
        routerLinkActive="active">LOG OUT</a>
     </nav>

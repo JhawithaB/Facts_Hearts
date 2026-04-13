@@ -17,6 +17,8 @@
        routerLinkActive="active">HEARTFELTS</a>
       <a routerLink="/about"
        routerLinkActive="active">ABOUT US</a>
+       <a routerLink="/contact"
+       routerLinkActive="active">CONTACT US</a>
       <a routerLink="/landing"
        routerLinkActive="active">LOG OUT</a>
     </nav>
@@ -28,8 +30,9 @@
   <main class="content">
 
     <div class="header" >
-      <h1>Welcome {{ user?.username || 'User' }} !</h1>
-      <p>Challenge your mind. Reflect from the heart.</p>
+      <p>Start Answering your..</p>
+      <h1>Science Questions</h1> 
+     
     </div>
     
     <div class="quiz-card" *ngIf="!isLoading">
@@ -95,18 +98,17 @@
   </main>
 
 </div>
-    <nav class="mobile-nav">
+ <nav class="mobile-nav">
+ 
   <a routerLink="/dashboard">
-    <span>🏠</span>
+    <img src="home.png" alt="Home" class="nav-icon">
   </a>
   <a routerLink="/trivia">
-    <span>🧠</span>
+    <img src="brain.png" alt="Trivia" class="nav-icon">
   </a>
   <a routerLink="/heartfelts">
-    <span>❤️</span>
+    <img src="heart.png" alt="Heartfelts" class="nav-icon">
   </a>
-  <a routerLink="/about">
-    <span>ℹ️</span>
-    </a>
   </nav>
+
 

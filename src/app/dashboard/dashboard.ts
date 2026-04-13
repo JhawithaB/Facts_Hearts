@@ -27,7 +27,7 @@ export class Dashboard implements OnInit{
 
 
   getQuestion() {
-      fetch('https://heartfelt-api-1.onrender.com/api/random')
+     fetch('https://heartfelt-api-1.onrender.com/api/random')
       .then(res => res.json())
       .then(data => {
         this.typeWriterEffect(data.question);
