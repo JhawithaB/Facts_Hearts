@@ -43,7 +43,7 @@ export class TriviHistory implements OnInit {
 
   async loadTrivia() {
     this.isLoading = true;
-    const cachedData = localStorage.getItem('history_trivia');
+    const cachedData = localStorage.getItem('history_questions_cache');
     if (cachedData) {
       this.questions = JSON.parse(cachedData);
       this.isLoading = false;
@@ -61,13 +61,14 @@ export class TriviHistory implements OnInit {
       const data = await response.json();
       if (data && data.length > 0) {
         this.questions = data;
-        localStorage.setItem('science_trivia', JSON.stringify(data));
+        localStorage.setItem('history_trivia', JSON.stringify(data));
         this.isLoading = false;
         this.startGame();
       }
     } catch (error) {
       this.errorMessage = "Connection error. Retry again.";
       this.isLoading = false;
+
     }
     this.cdr.detectChanges(); 
   }
@@ -116,12 +117,27 @@ export class TriviHistory implements OnInit {
       this.prepareAnswers();
     } else {
       this.quizFinished = true;
+
+      this.saveToHistory();
     }
     this.cdr.detectChanges(); 
   }
+  saveToHistory() {
+    const categoryName = this.router.url.split('/').pop()?.toUpperCase() || 'TRIVIA';
+    const newEntry = {
+      category: 'HISTORY',
+      score: this.score,
+      total: this.questions.length,
+      date: new Date().toISOString() + ' ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    };
+
+    const existingHistory = JSON.parse(localStorage.getItem('trivia_history') || '[]');
+    existingHistory.unshift(newEntry);
+    localStorage.setItem('trivia_history', JSON.stringify(existingHistory.slice(0, 10)));
+  }
 
   restart() {
-    localStorage.removeItem('science_trivia');
+    localStorage.removeItem('history_trivia');
     this.fetchQuestions();
   }
 

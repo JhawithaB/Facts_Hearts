@@ -1,0 +1,137 @@
+<div class="dashboard">
+  <!--kini-->
+  <header class="mobile-header">
+    <div class="logo">
+      <img src="favicon2.png" alt="logo">
+      <span>Facts & Hearts</span>
+    </div>
+    <div class="burger-icon" (click)="toggleMenu()" [class.open]="isMenuOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <div class="mobile-dropdown" [class.show]="isMenuOpen">
+    <a routerLink="/about" (click)="toggleMenu()">ABOUT US</a>
+    <a routerLink="/contact" (click)="toggleMenu()">CONTACT US</a>
+    <a (click)="logout(); toggleMenu()" class="logout-mobile">LOG OUT</a>
+  </div><!--kini-->
+  <aside class="sidebar">
+
+    <div class="logo">
+      <img src="favicon2.png" alt="logo">
+      <span>Facts & Hearts</span>
+    </div>
+    
+    <nav>
+      <a routerLink="/dashboard" routerLinkActive="active">HOME</a>
+      <a routerLink="/trivia" routerLinkActive="active">TRIVIA</a>
+      <a routerLink="/heartfelts" routerLinkActive="active">HEARTFELTS</a>
+      <a routerLink="/score-history" routerLinkActive="active">SCORE HISTORY</a>
+
+      <a routerLink="/about" routerLinkActive="active">ABOUT US</a>
+      <a routerLink="/contact" routerLinkActive="active">CONTACT US</a>
+      <a (click)="logout()">LOG OUT</a>
+    </nav>
+
+  </aside>
+
+  
+  <main class="content">
+    <div class="page-header">
+    <h1>Your <span class="text-sky">Facts</span> Journey</h1>
+    <p>A digital archive of all your trivia sessions across all categories.</p>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card glass science-card">
+      <div class="card-icon">🧬</div>
+      <div class="card-info">
+        <h3>Science</h3>
+        <p class="avg-text">{{ scienceAvg }}<span>/10</span></p>
+        <small>Average Score</small>
+      </div>
+    </div>
+
+    <div class="stat-card glass history-card">
+      <div class="card-icon">📜</div>
+      <div class="card-info">
+        <h3>History</h3>
+        <p class="avg-text">{{ historyAvg }}<span>/10</span></p>
+        <small>Average Score</small>
+      </div>
+    </div>
+
+    <div class="stat-card glass general-card">
+      <div class="card-icon">💡</div>
+      <div class="card-info">
+        <h3>General</h3>
+        <p class="avg-text">{{ generalAvg }}<span>/10</span></p>
+        <small>Average Score</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="history-list-container glass">
+    <div class="table-header">
+      <h2>Recent Activities</h2>
+    </div>
+
+    <div *ngIf="consolidatedHistory.length > 0; else noData" class="scroll-area">
+      <table class="modern-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Score</th>
+            <th>Date & Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of consolidatedHistory">
+            <td>
+              <span class="category-pill" [ngClass]="item.category">
+                {{ item.category.replace('_', ' ') }}
+              </span>
+            </td>
+            <td>
+              <div class="score-indicator" [ngClass]="getScoreClass(item.score)">
+                {{ item.score }} / {{ item.total }}
+              </div>
+            </td>
+            <td class="date-cell">{{ item.date | date:'medium' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ng-template #noData>
+      <div class="empty-state">
+        <p>Your history is empty. Start a trivia session to track your progress!</p>
+        <button class="btn-primary" routerLink="/trivia">Explore Categories</button>
+      </div>
+    </ng-template>
+  </div>
+    
+
+  </main>
+</div>
+
+<!--kini-->
+<nav class="mobile-nav">
+ 
+  <a routerLink="/dashboard">
+    <img src="home.png" alt="Home" class="nav-icon">
+  </a>
+  <a routerLink="/trivia">
+    <img src="brain.png" alt="Trivia" class="nav-icon">
+  </a>
+  <a routerLink="/heartfelts">
+    <img src="heart.png" alt="Heartfelts" class="nav-icon">
+  </a>
+   <a routerLink="/score-history">
+    <img src="score.png" alt="Scores" class="nav-icon">
+  </a>
+  <!--kini-->
+ 
+</nav>

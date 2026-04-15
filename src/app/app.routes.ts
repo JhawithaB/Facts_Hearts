@@ -10,6 +10,8 @@ import { TriviaScience } from './trivia-science/trivia-science';
 import { TriviHistory } from './trivia-history/trivi-history';
 import { TriviaGeneralknowledge } from './trivia-generalknowledge/trivia-generalknowledge';
 import { Contact } from './contact/contact';
+import { Learnmore } from './learnmore/learnmore';
+import { ScoreHistory } from './score-history/score-history';
 
 export const routes: Routes = [
   { path: '', component: Landing },
@@ -23,5 +25,7 @@ export const routes: Routes = [
   { path:'trivia-history', component: TriviHistory },
   { path:'trivia-generalknowledge', component: TriviaGeneralknowledge },
   { path:'contact', component: Contact},
+  {path: 'learnmore', component: Learnmore},
+  {path: 'score-history', component: ScoreHistory},
   { path: '**', redirectTo: '' }
 ];

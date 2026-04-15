@@ -12,18 +12,20 @@ body, html {
   overflow-x: hidden;
 }
 
+
+
 .dashboard{
   display:flex;
   min-height:100vh;
-  overflow: hidden; 
+   overflow: hidden;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 
 .sidebar{
   width:220px;
-  min-width: 220px;
-  min-width: 220px;
+  min-width: 220px; 
+  height: 100vh; 
   background:linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
   url(https://images.squarespace-cdn.com/content/v1/6740fa5cf32dde6b03917416/3c03a962-2c40-4e78-8c93-98af7414b96e/trivia+quiz+bg.jpeg);
   background-size:cover;
@@ -94,6 +96,7 @@ body, html {
   color:white;
   display:flex;
   flex-direction:column;
+  min-height:100vh;
   
 }
 
@@ -102,7 +105,7 @@ body, html {
 .header h1{
   margin:0;
   font-size:26px;
-  word-spacing: 8px;
+   word-spacing: 8px;
  font-family:"Lucida Handwriting", cursive ;
 }
 
@@ -160,6 +163,7 @@ body, html {
   gap: 15px;
    margin-top: auto;
    }
+
 .choice-btn { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); padding: 18px; border-radius: 15px; color: white; cursor: pointer; transition: 0.3s; font-size: 1rem; }
 .choice-btn:hover:not(:disabled) { background: rgba(59, 130, 246, 0.4); transform: translateY(-3px);border-radius: 15px;border-color: rgb(0, 0, 0); }
 .choice-btn.correct { background: #2ed573 !important; border-color: #2ed573; font-weight: 700; }
@@ -213,13 +217,11 @@ footer{
 }
 
 
-
-.mobile-nav {
+.mobile-nav{
   display: none;
 }
 
-
-@media (max-width: 768px){
+@media (max-width: 900px){
 
   .dashboard{
     flex-direction:column;
@@ -246,7 +248,7 @@ footer{
     gap:10px;
     display: none; 
   }
-  .mobile-nav {
+    .mobile-nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -271,6 +273,8 @@ footer{
     transition: filter 0.3s ease, transform 0.3s ease;
   }
 
+  
+
   .nav-icon {
     width: 30px; 
     height: 30px;
@@ -284,13 +288,11 @@ footer{
     filter: brightness(1) drop-shadow(0 0 8px #9ef2ff);
     transform: scale(1.2);
   }
-
   .content{
     padding:30px;
     margin-top: 50px; 
     margin-bottom: 50px;
   }
-
 
   
 

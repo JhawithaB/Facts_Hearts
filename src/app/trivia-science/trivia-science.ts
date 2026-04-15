@@ -67,6 +67,7 @@ export class TriviaScience implements OnInit {
     } catch (error) {
       this.errorMessage = "Connection error. Retry again.";
       this.isLoading = false;
+
     }
     this.cdr.detectChanges(); 
   }
@@ -115,12 +116,27 @@ export class TriviaScience implements OnInit {
       this.prepareAnswers();
     } else {
       this.quizFinished = true;
+
+      this.saveToHistory();
     }
     this.cdr.detectChanges(); 
   }
+  saveToHistory() {
+    const categoryName = this.router.url.split('/').pop()?.toUpperCase() || 'TRIVIA';
+    const newEntry = {
+      category: 'SCIENCE',
+      score: this.score,
+      total: this.questions.length,
+      date: new Date().toISOString() + ' ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    };
+
+    const existingHistory = JSON.parse(localStorage.getItem('science_history') || '[]');
+    existingHistory.unshift(newEntry);
+    localStorage.setItem('science_history', JSON.stringify(existingHistory.slice(0, 10)));
+  }
 
   restart() {
-    localStorage.removeItem('science_trivia');
+    localStorage.removeItem('science_history');
     this.fetchQuestions();
   }
 

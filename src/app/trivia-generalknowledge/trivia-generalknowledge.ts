@@ -120,12 +120,27 @@ export class TriviaGeneralknowledge implements OnInit {
       this.prepareAnswers();
     } else {
       this.quizFinished = true;
+
+      this.saveToHistory();
     }
     this.cdr.detectChanges(); 
   }
+  saveToHistory() {
+    const categoryName = this.router.url.split('/').pop()?.toUpperCase() || 'TRIVIA';
+    const newEntry = {
+      category: 'GENERAL KNOWLEDGE',
+      score: this.score,
+      total: this.questions.length,
+      date: new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    };
+
+    const existingHistory = JSON.parse(localStorage.getItem('generalknowlege_trivia') || '[]');
+    existingHistory.unshift(newEntry);
+    localStorage.setItem('generalknowlege_trivia', JSON.stringify(existingHistory.slice(0, 10)));
+  }
 
   restart() {
-    localStorage.removeItem('science_trivia');
+    localStorage.removeItem('generalknowlege_trivia');
     this.fetchQuestions();
   }
 

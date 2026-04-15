@@ -1,0 +1,88 @@
+<div class="learn-container">
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+
+  <nav class="top-nav">
+    <div class="logo" routerLink="/dashboard">
+      <img src="favicon2.png" alt="logo">
+      <span>Facts & Hearts</span>
+    </div>
+    <button class="back-home" routerLink="/landing">Back to Home</button>
+  </nav>
+
+  <header class="hero">
+    <span class="badge">EST. 2026</span>
+    <h1>Discover <span class="text-gradient">Facts & Hearts</span></h1>
+    <p>A digital sanctuary where logic meets emotion. Sharpen your intellect while nurturing your soul.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" routerLink="/signup">Start Learning</button>
+      <button class="btn-glass" (click)="scrollTo('#philosophy')">Our Philosophy</button>
+    </div>
+  </header>
+
+  <section class="grid-section reveal">
+    <div class="glass-card feat">
+      <div class="icon-box sky">🧠</div>
+      <h2>Trivia Challenges</h2>
+      <p>Dive into diverse categories from Science to Pop Culture. Real-time feedback helps you learn as you play.</p>
+    </div>
+
+    <div class="glass-card feat">
+      <div class="icon-box lavender">💜</div>
+      <h2>Heartfelt Reflections</h2>
+      <p>Thought-provoking prompts designed for personal growth and deep emotional connection with yourself and others.</p>
+    </div>
+
+    <div class="glass-card feat">
+      <div class="icon-box sky">💡</div>
+      <h2>The Daily Spark</h2>
+      <p>Never stop growing. Every 24 hours, we refresh our content to give you a new reason to think and feel.</p>
+    </div>
+  </section>
+
+  <section id="philosophy" class="philosophy glass-card reveal">
+    <div class="phil-text">
+      <h2>Why Facts & Hearts?</h2>
+      <p>In a world of mindless scrolling, we provide <strong>Mindful Engagement</strong>. Facts & Hearts was built on the belief that a balanced person needs both the sharpness of facts and the softness of empathy.</p>
+      
+      <div class="why-grid">
+        <div class="why-item"><span class="dot"></span> <strong>Logic:</strong> Enhancing cognitive retention.</div>
+        <div class="why-item"><span class="dot"></span> <strong>Empathy:</strong> Strengthening emotional intelligence.</div>
+        <div class="why-item"><span class="dot"></span> <strong>Design:</strong> Minimalist aesthetics for mental clarity.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-row reveal">
+    <div class="stat-box"><h3>100+</h3><p>Knowledge Facts</p></div>
+    <div class="stat-box"><h3>50+</h3><p>Deep Reflections</p></div>
+    <div class="stat-box"><h3>Daily</h3><p>Fresh Content</p></div>
+  </section>
+
+  <section class="workflow reveal">
+    <h2>Your Journey in 3 Steps</h2>
+    <div class="stepper">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h4>Choose</h4>
+        <p>Pick a category that matches your mood.</p>
+      </div>
+      <div class="step-line"></div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h4>Engage</h4>
+        <p>Answer questions or reflect on prompts.</p>
+      </div>
+      <div class="step-line"></div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h4>Grow</h4>
+        <p>Build your knowledge and soul daily.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 Facts & Hearts. Built with Passion by <strong>@JhawithaB</strong></p>
+  </footer>
+</div>
