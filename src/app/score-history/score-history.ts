@@ -37,10 +37,10 @@ export class ScoreHistory implements OnInit {
   }
 
   loadUnifiedHistory() {
-    // Collect data using the keys from your trivia components
+    
     const scData = JSON.parse(localStorage.getItem('science_history') || '[]');
     const hiData = JSON.parse(localStorage.getItem('trivia_history') || '[]');
-    const genData = JSON.parse(localStorage.getItem('generalknowledge_trivia') || '[]');
+    const genData = JSON.parse(localStorage.getItem('generalknowledge_history') || '[]');
 
     
     this.consolidatedHistory = [...scData, ...hiData, ...genData].sort((a, b) => {

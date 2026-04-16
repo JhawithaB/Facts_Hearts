@@ -65,7 +65,7 @@ export class TriviaGeneralknowledge implements OnInit {
       const data = await response.json();
       if (data && data.length > 0) {
         this.questions = data;
-        localStorage.setItem('science_trivia', JSON.stringify(data));
+        localStorage.setItem('generalknowledge_trivia', JSON.stringify(data));
         this.isLoading = false;
         this.startGame();
       }
@@ -134,13 +134,13 @@ export class TriviaGeneralknowledge implements OnInit {
       date: new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     };
 
-    const existingHistory = JSON.parse(localStorage.getItem('generalknowlege_trivia') || '[]');
+    const existingHistory = JSON.parse(localStorage.getItem('generalknowledge_history') || '[]');
     existingHistory.unshift(newEntry);
-    localStorage.setItem('generalknowlege_trivia', JSON.stringify(existingHistory.slice(0, 10)));
+    localStorage.setItem('generalknowledge_history', JSON.stringify(existingHistory.slice(0, 10)));
   }
 
   restart() {
-    localStorage.removeItem('generalknowlege_trivia');
+    localStorage.removeItem('generalknowledge_history');
     this.fetchQuestions();
   }
 
