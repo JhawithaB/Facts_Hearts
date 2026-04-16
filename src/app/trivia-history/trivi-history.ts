@@ -43,7 +43,7 @@ export class TriviHistory implements OnInit {
 
   async loadTrivia() {
     this.isLoading = true;
-    const cachedData = localStorage.getItem('history_questions_cache');
+    const cachedData = localStorage.getItem('history_trivia');
     if (cachedData) {
       this.questions = JSON.parse(cachedData);
       this.isLoading = false;
@@ -61,7 +61,7 @@ export class TriviHistory implements OnInit {
       const data = await response.json();
       if (data && data.length > 0) {
         this.questions = data;
-        localStorage.setItem('history_trivia', JSON.stringify(data));
+        localStorage.setItem('trivia_history', JSON.stringify(data));
         this.isLoading = false;
         this.startGame();
       }
@@ -131,9 +131,9 @@ export class TriviHistory implements OnInit {
       date: new Date().toISOString() + ' ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     };
 
-    const existingHistory = JSON.parse(localStorage.getItem('trivia_history') || '[]');
+    const existingHistory = JSON.parse(localStorage.getItem('history_trivia') || '[]');
     existingHistory.unshift(newEntry);
-    localStorage.setItem('trivia_history', JSON.stringify(existingHistory.slice(0, 10)));
+    localStorage.setItem('history_trivia', JSON.stringify(existingHistory.slice(0, 10)));
   }
 
   restart() {
